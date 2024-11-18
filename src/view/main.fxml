@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainController"
+           prefWidth="850" prefHeight="650">
+
+    <!-- 背景图片容器 -->
+    <Pane style="-fx-background-image: url('/view/resources/images/background.jpg');
+                 -fx-background-size: cover;
+                 -fx-background-repeat: no-repeat;" />
+
+    <!-- 主要内容区域 -->
+    <GridPane fx:id="mainGrid" alignment="CENTER"
+              maxWidth="400" maxHeight="350"
+              stylesheets="@resources/style.css"
+              style="-fx-background-color: rgba(255, 255, 255, 0.85);
+                     -fx-background-radius: 15px;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 2);">
+
+        <padding>
+            <Insets top="30" right="40" bottom="30" left="40"/>
+        </padding>
+
+        <vgap>20</vgap>
+        <hgap>15</hgap>
+
+        <!-- 标题 -->
+        <Label text="欢迎来到家庭管理系统"
+               style="-fx-font-size: 24px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #2c3e50;"
+               GridPane.rowIndex="0"
+               GridPane.columnSpan="2"
+               GridPane.halignment="CENTER"/>
+
+        <Label text="请选择以下操作"
+               style="-fx-font-size: 14px;
+                      -fx-text-fill: #7f8c8d;"
+               GridPane.rowIndex="1"
+               GridPane.columnSpan="2"
+               GridPane.halignment="CENTER"/>
+
+        <!-- 账号输入框 -->
+        <Label text="账号"
+               style="-fx-font-size: 14px;
+                      -fx-text-fill: #34495e;"
+               GridPane.rowIndex="2"
+               GridPane.columnIndex="0"/>
+        <TextField fx:id="accountField"
+                   promptText="请输入您的账号"
+                   style="-fx-background-radius: 5px;
+                         -fx-border-radius: 5px;
+                         -fx-border-color: #bdc3c7;
+                         -fx-border-width: 1px;"
+                   GridPane.rowIndex="2"
+                   GridPane.columnIndex="1"/>
+
+        <!-- 密码输入框 -->
+        <Label text="密码"
+               style="-fx-font-size: 14px;
+                      -fx-text-fill: #34495e;"
+               GridPane.rowIndex="3"
+               GridPane.columnIndex="0"/>
+        <PasswordField fx:id="passwordField"
+                       promptText="请输入您的密码"
+                       style="-fx-background-radius: 5px;
+                             -fx-border-radius: 5px;
+                             -fx-border-color: #bdc3c7;
+                             -fx-border-width: 1px;"
+                       GridPane.rowIndex="3"
+                       GridPane.columnIndex="1"/>
+
+        <!-- 按钮区域 -->
+        <HBox spacing="15"
+              alignment="CENTER"
+              GridPane.rowIndex="4"
+              GridPane.columnSpan="2">
+            <Button fx:id="acountButton"
+                    text="注册"
+                    onAction="#handleCount"
+                    style="-fx-background-color: #3498db;
+                           -fx-text-fill: white;
+                           -fx-font-size: 14px;
+                           -fx-padding: 8 25;
+                           -fx-background-radius: 5px;"/>
+            <Button fx:id="loginButton"
+                    text="登录"
+                    onAction="#handleLogin"
+                    style="-fx-background-color: #2ecc71;
+                           -fx-text-fill: white;
+                           -fx-font-size: 14px;
+                           -fx-padding: 8 25;
+                           -fx-background-radius: 5px;"/>
+            <Button fx:id="exitButton"
+                    text="退出"
+                    onAction="#handleExit"
+                    style="-fx-background-color: #e74c3c;
+                           -fx-text-fill: white;
+                           -fx-font-size: 14px;
+                           -fx-padding: 8 25;
+                           -fx-background-radius: 5px;"/>
+        </HBox>
+    </GridPane>
+</StackPane>

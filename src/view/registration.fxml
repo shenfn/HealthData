@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistrationController" stylesheets="@resources/style.css">
+    <VBox alignment="CENTER" spacing="20" prefWidth="300" prefHeight="400">
+        <!-- 用户名 -->
+        <TextField fx:id="accountField" promptText="请输入用户名" prefWidth="200" />
+
+        <!-- 密码 -->
+        <PasswordField fx:id="passwordField" promptText="请输入密码" prefWidth="200" />
+
+        <!-- 邮箱 -->
+        <TextField fx:id="emailField" promptText="请输入邮箱" prefWidth="200" />
+
+
+        <!-- 年龄 -->
+        <TextField fx:id="ageFiled" promptText="请输入年龄" prefWidth="200" />
+
+        <!-- 注册按钮 -->
+        <Button fx:id="registerButton" text="注册" onAction="#handleRegister" prefWidth="200"/>
+
+        <!-- 返回按钮 -->
+        <Button fx:id="backButton" text="返回" onAction="#handleBack" prefWidth="200"/>
+    </VBox>
+</AnchorPane>
